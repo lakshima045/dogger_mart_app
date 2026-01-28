@@ -65,41 +65,101 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Doggymart Home"),
-        backgroundColor: Colors.orange,
-      ),
+      backgroundColor: Colors.orange[50],
+      appBar: AppBar(title: Text("Doggymart"), backgroundColor: Colors.orange),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Welcome to Doggymart 🐶",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.orange[100],
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: NetworkImage(
+                    'https://images.unsplash.com/photo-1552053831-71594a27632d',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             SizedBox(height: 20),
 
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("View Products"),
+            Text(
+              "Categories",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
 
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("My Orders"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("All"),
+                Text("Small"),
+                Text("Medium"),
+                Text("Large"),
+                Text("Puppies"),
+              ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
 
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text("Logout"),
+            Container(
+              height: 120,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  DogCard("Golden", "\$1200"),
+                  SizedBox(width: 10),
+                  DogCard("Shepherd", "\$1500"),
+                  SizedBox(width: 10),
+                  DogCard("Bulldog", "\$2500"),
+                ],
+              ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DogCard extends StatelessWidget {
+  final String name;
+  final String price;
+
+  DogCard(this.name, this.price);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 3)],
+      ),
+      child: Column(
+        children: [
+          Container(
+            height: 80,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
+              color: Colors.orange[100],
+            ),
+            child: Center(
+              child: Icon(Icons.pets, size: 40, color: Colors.orange),
+            ),
+          ),
+          SizedBox(height: 5),
+          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(height: 5),
+          Text(price, style: TextStyle(color: Colors.orange, fontSize: 16)),
+        ],
       ),
     );
   }
