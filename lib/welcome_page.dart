@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'home_page.dart';
+import 'home_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -8,18 +8,18 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:
-          Colors.white, // Changed from orange[50] for a modern look
+          Colors.white, 
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Hero Image
+          
             Container(
               decoration: BoxDecoration(
                 color: const Color(
                   0xFFF3E5F5,
-                ), // Light purple circle background
+                ), 
                 shape: BoxShape.circle,
               ),
               padding: const EdgeInsets.all(20),
@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
                 "assets/dog12.png",
                 height: 250,
                 fit: BoxFit
-                    .contain, // Contain usually looks better for transparent PNGs
+                    .contain, 
               ),
             ),
 
@@ -38,7 +38,7 @@ class WelcomePage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 34,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF8E24AA), // Our signature purple
+                color: Color(0xFF8E24AA), 
               ),
             ),
 
@@ -56,7 +56,7 @@ class WelcomePage extends StatelessWidget {
 
             const SizedBox(height: 60),
 
-            // Get Started Button
+          
             SizedBox(
               width: double.infinity,
               height: 55,
