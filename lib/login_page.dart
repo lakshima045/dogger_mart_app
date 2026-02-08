@@ -7,9 +7,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Clean white background
+      backgroundColor: Colors.white, //  white background
       body: SingleChildScrollView(
-        // Prevents overflow when keyboard appears
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
           child: Column(
@@ -60,7 +59,7 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Password Field
+              // Password
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -81,7 +80,7 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              // Forgot Password Link
+              // Forgot Password
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
