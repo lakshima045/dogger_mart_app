@@ -1,4 +1,4 @@
-name: doggermart
+name: doggy
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -58,9 +58,30 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+     
+    - assets/dog1.png
+    - assets/dog2.jpg
+    - assets/dog3.png
+    - assets/dog5.png
+    - assets/dog6.png
+    - assets/dog7.jpg
+    - assets/dog8.png
+    - assets/dog9.png
+    - assets/dog10.png
+    - assets/dog11.png
+    - assets/dog12.png
+    - assets/dog13.png
+    - assets/doga.jpeg
+    - assets/dogb.jpeg
+    - assets/dogc.jpeg
+    - assets/dogd.jpeg
+    - assets/doge.jpeg
+    - assets/dogf.jpeg
+    - assets/dogg.jpeg
+    - assets/dogh.jpeg
+    - assets/dogi.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
