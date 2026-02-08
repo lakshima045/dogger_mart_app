@@ -11,7 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // Favorite states for 8 dogs
   bool isFavorite1 = false;
   bool isFavorite2 = false;
   bool isFavorite3 = false;
@@ -24,9 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(
-        0xFFF8F8F8,
-      ), // Light grey background like reference
+      backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -47,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               decoration: BoxDecoration(
-                color: const Color(0xFFF3D9DC), // Soft pink header
+                color: const Color(0xFFF3D9DC),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -100,16 +97,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            // Grid View - Using a fixed Aspect Ratio to control box size
             GridView.count(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2, // 2 items per row like the reference
+              crossAxisCount: 2,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
-              childAspectRatio:
-                  0.75, // Adjust this to make boxes taller or shorter
+              childAspectRatio: 0.75,
               children: [
                 buildDogCard(
                   'Riley',
@@ -247,25 +242,19 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // THE IMAGE BOX
           Expanded(
             child: Stack(
               children: [
                 Container(
                   width: double.infinity,
-                  margin: const EdgeInsets.all(
-                    10,
-                  ), // The margin creates the "small box" feel
+                  margin: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: const Color(0xFFFDFDFD),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.contain,
-                    ), // BoxFit.contain prevents cutting off the dog
+                    child: Image.asset(imagePath, fit: BoxFit.contain),
                   ),
                 ),
                 Positioned(
@@ -283,7 +272,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          // INFO SECTION
+
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: Column(

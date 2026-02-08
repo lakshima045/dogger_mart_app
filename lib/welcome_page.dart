@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
                 "assets/dog12.png",
                 height: 250,
                 fit: BoxFit
-                    .contain, 
+                    .contain,
               ),
             ),
 
@@ -56,7 +56,7 @@ class WelcomePage extends StatelessWidget {
 
             const SizedBox(height: 60),
 
-          
+         
             SizedBox(
               width: double.infinity,
               height: 55,
