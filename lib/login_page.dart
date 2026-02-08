@@ -1,129 +1,86 @@
 import 'package:flutter/material.dart';
-
-/* ---------------- LOGIN PAGE ---------------- */
+import 'welcome_page.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange[50],
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.pets, size: 90, color: Colors.orange),
-            SizedBox(height: 10),
-
-            Text(
-              "Doggymart",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 40),
-
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Email",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.email),
+      backgroundColor: Colors.white, //  white background
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 50),
+              // Logo Section
+              const Icon(
+                Icons.pets,
+                size: 90,
+                color: Color(0xFF8E24AA), // Signature Purple
               ),
-            ),
-            SizedBox(height: 20),
-
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Password",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.lock),
-              ),
-            ),
-            SizedBox(height: 30),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-              ),
-              child: Text("Login"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/* ---------------- HOME PAGE ---------------- */
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.orange[50],
-      appBar: AppBar(title: Text("Doggymart"), backgroundColor: Colors.orange),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Container(
-              height: 150,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.orange[100],
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: NetworkImage(
-                    'https://images.unsplash.com/photo-1552053831-71594a27632d',
-                  ),
-                  fit: BoxFit.cover,
+              const SizedBox(height: 10),
+              const Text(
+                "Doggymart",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF8E24AA),
                 ),
               ),
-            ),
-            SizedBox(height: 20),
-
-            Text(
-              "Categories",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 10),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("All"),
-                Text("Small"),
-                Text("Medium"),
-                Text("Large"),
-                Text("Puppies"),
-              ],
-            ),
-            SizedBox(height: 20),
-
-            Container(
-              height: 120,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  DogCard("Golden", "\$1200"),
-                  SizedBox(width: 10),
-                  DogCard("Shepherd", "\$1500"),
-                  SizedBox(width: 10),
-                  DogCard("Bulldog", "\$2500"),
-                ],
+              const SizedBox(height: 10),
+              Text(
+                "Welcome back! Log in to continue",
+                style: TextStyle(color: Colors.grey[600], fontSize: 16),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+
+              const SizedBox(height: 50),
+
+              // Email Field
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Email",
+                  hintText: "example@mail.com",
+                  prefixIcon: const Icon(Icons.email, color: Color(0xFF8E24AA)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF8E24AA),
+                      width: 2,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              // Password
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: "Password",
+                  prefixIcon: const Icon(Icons.lock, color: Color(0xFF8E24AA)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF8E24AA),
+                      width: 2,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+
 
 class DogCard extends StatelessWidget {
   final String name;
