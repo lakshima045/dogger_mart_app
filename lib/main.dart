@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(DoggymartApp());
@@ -8,6 +8,6 @@ void main() {
 class DoggymartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }

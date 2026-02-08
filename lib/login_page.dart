@@ -80,73 +80,43 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              // Forgot Password
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(color: Color(0xFF8E24AA)),
-                  ),
-                ),
+
+
+class DogCard extends StatelessWidget {
+  final String name;
+  final String price;
+
+  DogCard(this.name, this.price);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 150,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 3)],
+      ),
+      child: Column(
+        children: [
+          Container(
+            height: 80,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
               ),
-
-              const SizedBox(height: 20),
-
-              // Login Button
-              SizedBox(
-                width: double.infinity,
-                height: 55,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const WelcomePage(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF8E24AA),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    elevation: 3,
-                  ),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // Sign Up Option
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text("Don't have an account?"),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF8E24AA),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+              color: Colors.orange[100],
+            ),
+            child: Center(
+              child: Icon(Icons.pets, size: 40, color: Colors.orange),
+            ),
           ),
-        ),
+          SizedBox(height: 5),
+          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(height: 5),
+          Text(price, style: TextStyle(color: Colors.orange, fontSize: 16)),
+        ],
       ),
     );
   }
