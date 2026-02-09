@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'adoption_registration_page.dart';
+<<<<<<< Updated upstream
 //import 'contact_page.dart';
+=======
+import 'contact_page.dart';
+>>>>>>> Stashed changes
 
 class DogDetailsPage extends StatelessWidget {
   final String dogName;

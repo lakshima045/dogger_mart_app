@@ -81,8 +81,12 @@ flutter:
     - assets/dogg.jpeg
     - assets/dogh.jpeg
     - assets/dogi.jpeg
+<<<<<<< Updated upstream
     
-    - assets/dog2.jpg
+=======
+
+>>>>>>> Stashed changes
+   - assets/dog2.jpg
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
