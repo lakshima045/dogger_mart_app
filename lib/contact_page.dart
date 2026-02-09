@@ -5,41 +5,46 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const Color primaryPurple = Color(0xFF8E24AA);
+
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
         backgroundColor: Colors.white,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           'Contact Us',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         ),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          /// HEADER CARD
           Card(
-            color: const Color(0xFFF3E5F5),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
+            color: const Color(0xFFF3E5F5), // Light purple theme
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            elevation: 0,
+            child: const Padding(
+              padding: EdgeInsets.all(20),
               child: Row(
                 children: [
-                  const Icon(
-                    Icons.contact_support,
-                    size: 45,
-                    color: Color(0xFF8E24AA),
-                  ),
-                  const SizedBox(width: 15),
+                  Icon(Icons.contact_support, size: 45, color: primaryPurple),
+                  SizedBox(width: 15),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'Doggymart Support',
                           style: TextStyle(
                             fontSize: 20,
@@ -47,8 +52,8 @@ class ContactPage extends StatelessWidget {
                             color: Colors.black87,
                           ),
                         ),
-                        const SizedBox(height: 5),
-                        const Text(
+                        SizedBox(height: 5),
+                        Text(
                           'We\'re here to help you and your furry friend!',
                           style: TextStyle(fontSize: 14, color: Colors.black54),
                         ),
@@ -62,281 +67,211 @@ class ContactPage extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Reach Out',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 20),
-
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF8E24AA).withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.phone_android,
-                          color: const Color(0xFF8E24AA),
-                          size: 20,
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Phone Number',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '+94 77 123 4567',
-                            style: TextStyle(color: Colors.grey[600]),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-
-                  const Divider(height: 30),
-
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF8E24AA).withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.alternate_email,
-                          color: const Color(0xFF8E24AA),
-                          size: 20,
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Email Address',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'support@doggymart.com',
-                            style: TextStyle(color: Colors.grey[600]),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-
-                  const Divider(height: 30),
-
-                  Row(
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF8E24AA).withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.map_outlined,
-                          color: const Color(0xFF8E24AA),
-                          size: 20,
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Our Location',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '123 Pet Street, Colombo',
-                            style: TextStyle(color: Colors.grey[600]),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+          /// CONTACT INFORMATION CARD
+          _buildCard(
+            title: "Reach Out",
+            child: const Column(
+              children: [
+                _ContactItem(
+                  icon: Icons.phone_android,
+                  iconColor: primaryPurple,
+                  title: "Phone Number",
+                  subtitle: "+94 77 123 4567",
+                ),
+                Divider(height: 30),
+                _ContactItem(
+                  icon: Icons.alternate_email,
+                  iconColor: primaryPurple,
+                  title: "Email Address",
+                  subtitle: "support@doggymart.com",
+                ),
+                Divider(height: 30),
+                _ContactItem(
+                  icon: Icons.map_outlined,
+                  iconColor: primaryPurple,
+                  title: "Our Location",
+                  subtitle: "123 Pet Street, Colombo",
+                ),
+              ],
             ),
           ),
 
           const SizedBox(height: 16),
 
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Business Hours',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 20),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Monday - Friday',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                      Text(
-                        '9:00 AM - 6:00 PM',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Saturday',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                      Text(
-                        '10:00 AM - 4:00 PM',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text(
-                        'Sunday',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                      Text('Closed', style: TextStyle(color: Colors.grey[600])),
-                    ],
-                  ),
-                ],
-              ),
+          /// BUSINESS HOURS CARD
+          _buildCard(
+            title: "Business Hours",
+            child: const Column(
+              children: [
+                _HourRow(day: "Monday - Friday", time: "9:00 AM - 6:00 PM"),
+                SizedBox(height: 10),
+                _HourRow(day: "Saturday", time: "10:00 AM - 4:00 PM"),
+                SizedBox(height: 10),
+                _HourRow(day: "Sunday", time: "Closed"),
+              ],
             ),
           ),
 
           const SizedBox(height: 16),
 
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Send us a Message',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          /// CONTACT FORM CARD
+          _buildCard(
+            title: "Send us a Message",
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Your Name",
+                    prefixIcon: const Icon(Icons.person_outline),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                   ),
-                  const SizedBox(height: 20),
-
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Your Name',
-                      prefixIcon: const Icon(Icons.person_outline),
-                      border: OutlineInputBorder(
+                ),
+                const SizedBox(height: 15),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Your Email",
+                    prefixIcon: const Icon(Icons.mail_outline),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 15),
+                TextField(
+                  maxLines: 3,
+                  decoration: InputDecoration(
+                    labelText: "How can we help?",
+                    alignLabelWithHint: true,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                SizedBox(
+                  width: double.infinity,
+                  height: 55,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      _showSuccessDialog(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: primaryPurple,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
-                  ),
-
-                  const SizedBox(height: 15),
-
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Your Email',
-                      prefixIcon: const Icon(Icons.mail_outline),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
+                    child: const Text(
+                      "Send Message",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
                   ),
-
-                  const SizedBox(height: 15),
-
-                  TextField(
-                    maxLines: 3,
-                    decoration: InputDecoration(
-                      labelText: 'How can we help?',
-                      alignLabelWithHint: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  SizedBox(
-                    width: double.infinity,
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: const Text('Message Sent'),
-                            content: const Text(
-                              'Thank you! Our team will get back to you shortly.',
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text(
-                                  'OK',
-                                  style: TextStyle(color: Color(0xFF8E24AA)),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF8E24AA),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      child: const Text(
-                        'Send Message',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-
           const SizedBox(height: 30),
         ],
       ),
+    );
+  }
+
+  void _showSuccessDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text("Message Sent"),
+        content: const Text("Thank you! Our team will get back to you shortly."),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("OK", style: TextStyle(color: Color(0xFF8E24AA))),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildCard({required String title, required Widget child}) {
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
+            child,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ContactItem extends StatelessWidget {
+  final IconData icon;
+  final Color iconColor;
+  final String title;
+  final String subtitle;
+
+  const _ContactItem({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    required this.subtitle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CircleAvatar(
+          backgroundColor: iconColor.withOpacity(0.1),
+          child: Icon(icon, color: iconColor, size: 20),
+        ),
+        const SizedBox(width: 15),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text(subtitle, style: TextStyle(color: Colors.grey[600])),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _HourRow extends StatelessWidget {
+  final String day;
+  final String time;
+
+  const _HourRow({required this.day, required this.time});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(day, style: const TextStyle(fontWeight: FontWeight.w500)),
+        Text(time, style: TextStyle(color: Colors.grey[600])),
+      ],
     );
   }
 }
