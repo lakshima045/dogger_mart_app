@@ -28,14 +28,62 @@ class FavoritesPage extends StatelessWidget {
     // List of favorite dogs with updated prices and image extensions
     List<Map<String, dynamic>> favoriteDogs = [];
 
-    if (isFavorite1) favoriteDogs.add({'name':'Riley','gender':'Female','price':'Rs. 6,500','imagePath':'assets/dogb.jpeg'});
-    if (isFavorite2) favoriteDogs.add({'name':'Mikka','gender':'Male','price':'Rs. 50,000','imagePath':'assets/dogc.jpeg'});
-    if (isFavorite3) favoriteDogs.add({'name':'Bruno','gender':'Male','price':'Rs. 30,000','imagePath':'assets/dogd.jpeg'});
-    if (isFavorite4) favoriteDogs.add({'name':'Luna','gender':'Female','price':'Rs. 45,000','imagePath':'assets/doge.jpeg'});
-    if (isFavorite5) favoriteDogs.add({'name':'Max','gender':'Male','price':'Rs. 24,000','imagePath':'assets/dogf.jpeg'});
-    if (isFavorite6) favoriteDogs.add({'name':'Bella','gender':'Female','price':'Rs. 34,000','imagePath':'assets/dogg.jpeg'});
-    if (isFavorite7) favoriteDogs.add({'name':'Charlie','gender':'Male','price':'Rs. 20,000','imagePath':'assets/dogh.jpeg'});
-    if (isFavorite8) favoriteDogs.add({'name':'Daisy','gender':'Female','price':'Rs. 10,000','imagePath':'assets/dogi.jpeg'});
+    if (isFavorite1)
+      favoriteDogs.add({
+        'name': 'Riley',
+        'gender': 'Female',
+        'price': 'Rs. 6,500',
+        'imagePath': 'assets/dogb.jpeg',
+      });
+    if (isFavorite2)
+      favoriteDogs.add({
+        'name': 'Mikka',
+        'gender': 'Male',
+        'price': 'Rs. 50,000',
+        'imagePath': 'assets/dogc.jpeg',
+      });
+    if (isFavorite3)
+      favoriteDogs.add({
+        'name': 'Bruno',
+        'gender': 'Male',
+        'price': 'Rs. 30,000',
+        'imagePath': 'assets/dogd.jpeg',
+      });
+    if (isFavorite4)
+      favoriteDogs.add({
+        'name': 'Luna',
+        'gender': 'Female',
+        'price': 'Rs. 45,000',
+        'imagePath': 'assets/doge.jpeg',
+      });
+    if (isFavorite5)
+      favoriteDogs.add({
+        'name': 'Max',
+        'gender': 'Male',
+        'price': 'Rs. 24,000',
+        'imagePath': 'assets/dogf.jpeg',
+      });
+    if (isFavorite6)
+      favoriteDogs.add({
+        'name': 'Bella',
+        'gender': 'Female',
+        'price': 'Rs. 34,000',
+        'imagePath': 'assets/dogg.jpeg',
+      });
+    if (isFavorite7)
+      favoriteDogs.add({
+        'name': 'Charlie',
+        'gender': 'Male',
+        'price': 'Rs. 20,000',
+        'imagePath': 'assets/dogh.jpeg',
+      });
+    if (isFavorite8)
+      favoriteDogs.add({
+        'name': 'Daisy',
+        'gender': 'Female',
+        'price': 'Rs. 10,000',
+        'imagePath': 'assets/dogi.jpeg',
+      });
 
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8F8),
@@ -60,9 +108,16 @@ class FavoritesPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.favorite_border, size: 80, color: Colors.grey[300]),
+                  Icon(
+                    Icons.favorite_border,
+                    size: 80,
+                    color: Colors.grey[300],
+                  ),
                   const SizedBox(height: 20),
-                  const Text('No favorites yet', style: TextStyle(fontSize: 18, color: Colors.grey)),
+                  const Text(
+                    'No favorites yet',
+                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                  ),
                 ],
               ),
             )
@@ -74,7 +129,9 @@ class FavoritesPage extends StatelessWidget {
                 return Card(
                   margin: const EdgeInsets.only(bottom: 16),
                   elevation: 2,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(12),
                     child: Row(
@@ -89,7 +146,10 @@ class FavoritesPage extends StatelessWidget {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(dog['imagePath'], fit: BoxFit.contain),
+                            child: Image.asset(
+                              dog['imagePath'],
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -99,19 +159,25 @@ class FavoritesPage extends StatelessWidget {
                             children: [
                               Text(
                                 dog['name'],
-                                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                               Text(
                                 dog['gender'],
-                                style: const TextStyle(color: Colors.grey, fontSize: 14),
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 14,
+                                ),
                               ),
                               const SizedBox(height: 4),
                               Text(
                                 dog['price'],
                                 style: const TextStyle(
-                                  fontSize: 16, 
-                                  color: Colors.green, 
-                                  fontWeight: FontWeight.bold
+                                  fontSize: 16,
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ],
@@ -133,9 +199,14 @@ class FavoritesPage extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF8E24AA),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
-                          child: const Text('View', style: TextStyle(color: Colors.white)),
+                          child: const Text(
+                            'View',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),
