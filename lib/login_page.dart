@@ -7,7 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, //  white background
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
@@ -15,12 +15,8 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 50),
-              // Logo Section
-              const Icon(
-                Icons.pets,
-                size: 90,
-                color: Color(0xFF8E24AA), // Signature Purple
-              ),
+
+              const Icon(Icons.pets, size: 90, color: Color(0xFF8E24AA)),
               const SizedBox(height: 10),
               const Text(
                 "Doggymart",
@@ -38,7 +34,6 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 50),
 
-              // Email Field
               TextField(
                 decoration: InputDecoration(
                   labelText: "Email",
@@ -59,7 +54,6 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Password
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -80,43 +74,70 @@ class LoginPage extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-
-
-class DogCard extends StatelessWidget {
-  final String name;
-  final String price;
-
-  DogCard(this.name, this.price);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 150,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 3)],
-      ),
-      child: Column(
-        children: [
-          Container(
-            height: 80,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Forgot Password?",
+                    style: TextStyle(color: Color(0xFF8E24AA)),
+                  ),
+                ),
               ),
-              color: Colors.orange[100],
-            ),
-            child: Center(
-              child: Icon(Icons.pets, size: 40, color: Colors.orange),
-            ),
+
+              const SizedBox(height: 20),
+
+              SizedBox(
+                width: double.infinity,
+                height: 55,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WelcomePage(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF8E24AA),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    elevation: 3,
+                  ),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Don't have an account?"),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF8E24AA),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-          SizedBox(height: 5),
-          Text(name, style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 5),
-          Text(price, style: TextStyle(color: Colors.orange, fontSize: 16)),
-        ],
+        ),
       ),
     );
   }
