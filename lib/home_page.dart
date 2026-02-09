@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dog_details_page.dart';
+
 import 'favorites_page.dart';
+
 import 'contact_page.dart';
 
 class HomePage extends StatefulWidget {
