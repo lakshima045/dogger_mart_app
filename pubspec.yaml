@@ -82,7 +82,7 @@ flutter:
     - assets/dogh.jpeg
     - assets/dogi.jpeg
 
-     - assets/dog2.jpg
+    - assets/dog2.jpg
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
