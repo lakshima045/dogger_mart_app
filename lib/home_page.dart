@@ -4,9 +4,9 @@ import 'dog_details_page.dart';
 import 'favorites_page.dart';
 //import 'contact_page.dart';
 =======
-//import 'dog_details_page.dart';
-//import 'favorites_page.dart';
-//import 'contact_page.dart';
+// import 'dog_details_page.dart';
+// import 'favorites_page.dart';
+// import 'contact_page.dart';
 >>>>>>> Stashed changes
 
 class HomePage extends StatefulWidget {
