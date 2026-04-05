@@ -68,7 +68,7 @@ class ProfilePage extends StatelessWidget {
                     child: Center(
                       child: ClipOval(
                         child: Image.asset(
-                          "assets/owner.jpg",
+                          "assets/owner.jpeg",
                           width: 70,
                           height: 70,
                           fit: BoxFit.cover,
