@@ -4,6 +4,7 @@ import 'dog_details_page.dart';
 import 'favorites_page.dart';
 
 import 'contact_page.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
   bool isFavorite1 = false;
   bool isFavorite2 = false;
   bool isFavorite3 = false;
@@ -26,9 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(
-        0xFFF8F8F8,
-      ), 
+      backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -40,17 +38,27 @@ class _HomePageState extends State<HomePage> {
             color: Colors.black,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person_outline, color: Color(0xFF8E24AA)),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfilePage()),
+              );
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             Container(
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
               decoration: BoxDecoration(
-                color: const Color(0xFFF3D9DC), 
+                color: const Color(0xFFF3D9DC),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -103,16 +111,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-           
             GridView.count(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2, 
+              crossAxisCount: 2,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
-              childAspectRatio:
-                  0.75, 
+              childAspectRatio: 0.75,
               children: [
                 buildDogCard(
                   'Riley',
@@ -185,7 +191,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFF8E24AA), 
+        backgroundColor: const Color(0xFF8E24AA),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white70,
         currentIndex: 0,
