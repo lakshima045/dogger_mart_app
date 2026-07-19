@@ -94,19 +94,27 @@ A beautiful and user-friendly Flutter application for dog adoption, where users 
 ---
 
 ## 📸 Screenshots
-
-| Splash Screen | Welcome Page | Login Page |
-|---------------|--------------|------------|
-| ![Splash](splash_screen.png) | ![Welcome](welcome_page.png) | ![Login](login_page.png) |
-
-| Home Page | Dog Details | Adoption Form |
-|-----------|-------------|---------------|
-| ![Home](home_page.png) | ![Details](dog_details_page.png) | ![Form](adoption_registration_page.png) |
-
-| Favorites | Contact | Profile |
-|-----------|---------|---------|
-| ![Favorites](favorites_page.png) | ![Contact](contact_page.png) | ![Profile](profile_page.png) |
-
+ 
+| Splash Screen | Welcome Page |
+|---------------|--------------|
+| ![Splash](splash_screen.png) | ![Welcome](welcome_page.png) |
+ 
+| Login Page | Home Page |
+|------------|-----------|
+| ![Login](login_page.png) | ![Home](home_page.png) |
+ 
+| Dog Details | Adoption Form |
+|-------------|---------------|
+| ![Details](dog_details_page.png) | ![Form](adoption_registration_page.png) |
+ 
+| Favorites | Contact |
+|-----------|---------|
+| ![Favorites](favorites_page.png) | ![Contact](contact_page.png) |
+ 
+| Profile |
+|---------|
+| ![Profile](profile_page.png) |
+ 
 ---
 
 ## 📂 Project Structure
