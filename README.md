@@ -1,4 +1,3 @@
-```markdown
 # 🐕 Doggymart - Pet Adoption App
 
 A beautiful and user-friendly Flutter application for dog adoption, where users can browse dogs, mark favorites, and submit adoption applications.
@@ -109,7 +108,6 @@ A beautiful and user-friendly Flutter application for dog adoption, where users 
 | ![Favorites](favorites_page.png) | ![Contact](contact_page.png) | ![Profile](profile_page.png) |
 
 ---
-
 
 ## 📂 Project Structure
 
@@ -225,20 +223,14 @@ The app is designed to work on:
 
 ---
 
-## 👩‍💻 Authors 
+## 👩‍💻 Authors
 
 **Dhananji Lakshima**
 
 **Pabodha Sewwandi**
-
-
 
 ⭐ *Feel free to explore, fork, or suggest improvements!*
 
 ---
 
 **Made with ❤️ for dog lovers everywhere** 🐕💚
-```
-
-
- 
